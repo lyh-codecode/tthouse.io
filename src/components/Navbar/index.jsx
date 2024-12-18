@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import './style.css';
 import { MoonIcon, SunIcon } from './ThemeIcons';
 import { NavLink } from 'react-router-dom';
-import MySite from '../../views/MySite';
 
 export default function Navbar({ isDark, setIsDark }) {
     const [showMySiteOptions, setShowMySiteOptions] = useState(false);
@@ -25,22 +24,14 @@ export default function Navbar({ isDark, setIsDark }) {
             <div className="nav-content">
                 <div className="nav-left">
                     <a href="/" className="nav-logo">
-                        Hello 我是小梁，一个前端开发工程师
+                        Hello 我是小梁
                     </a>
                 </div>
 
                 <div className="nav-right">
                     <NavLink to="/" className="nav-link" activeClassName="active">首页</NavLink>
-                    <div
-                        className="nav-link"
-                        onMouseEnter={() => setShowMySiteOptions(true)}
-                        onMouseLeave={() => setShowMySiteOptions(false)}
-                    >
-                        我的站点
-                        {showMySiteOptions && (
-                            <MySite showOptions={showMySiteOptions} setShowOptions={setShowMySiteOptions} />
-                        )}
-                    </div>
+                    <NavLink to="https://github.com/lyh-codecode" className="nav-link" activeClassName="active">我的Github</NavLink>
+                    <NavLink to="https://juejin.cn/user/3894900086810922" className="nav-link" activeClassName="active">我的掘金</NavLink>
                     <NavLink to="/about" className="nav-link" activeClassName="active">关于我</NavLink>
                     <button className="theme-toggle" onClick={toggleTheme} title="切换主题">
                         {isDark ? <SunIcon /> : <MoonIcon />}
