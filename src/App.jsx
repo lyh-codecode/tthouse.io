@@ -1,17 +1,15 @@
 import './App.css'
 
-
 import SiteSection from './components/SiteSection/index'
 import Navbar from './components/Navbar'
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import KnowledgeBase from './views/KnowledgeBase'
 import PracticeProjects from './views/PracticeProjects'
-
 import Studio from './views/Studio'
 import { useState, useEffect } from 'react'
 import Planning from './views/Planning'
-
 import AboutMe from './views/about/AboutMe'; // 导入 AboutMe 组件
+import NotFound from './views/NotFound'; // 导入 NotFound 组件
 
 function App() {
   const [isDark, setIsDark] = useState(() => {
@@ -37,6 +35,7 @@ function App() {
             <Route path="/index" element={<SiteSection isDark={isDark} />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path='/' element={<Navigate to="/index" />} />
+            <Route path="*" element={<Navigate to="/index" />} />
           </Routes>
         </div>
       </div>
