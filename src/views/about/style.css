@@ -1,0 +1,29 @@
+.about-me {
+    display: flex;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-me h2 {
+    color: #333;
+}
+
+.about-me p {
+    color: #555;
+}
+
+.personal-info {
+    padding-top: 30px;
+    margin-top: 20px;
+    flex: 1;
+}
+
+.personal-info-title {
+    text-align: center;
+}
+
+.about-me-left {
+    flex: 1;
+}
