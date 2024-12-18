@@ -9,7 +9,6 @@ import Studio from './views/Studio'
 import { useState, useEffect } from 'react'
 import Planning from './views/Planning'
 import AboutMe from './views/about/AboutMe'; // 导入 AboutMe 组件
-import NotFound from './views/NotFound'; // 导入 NotFound 组件
 
 function App() {
   const [isDark, setIsDark] = useState(() => {

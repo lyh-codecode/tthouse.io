@@ -32,7 +32,6 @@
     cursor: pointer;
 }
 
-
 .card-icon {
     font-size: 2rem;
     padding: 1rem;
@@ -50,4 +49,11 @@
 .card-content p {
     color: #ffffff;
     font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .site-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
 }

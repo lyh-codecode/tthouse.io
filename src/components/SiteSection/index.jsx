@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './style.css'
 
 export default function SiteSection({ isDark }) {
@@ -48,13 +49,13 @@ export default function SiteSection({ isDark }) {
                 <h2>🏠 前端仓库</h2>
                 <section className="site-section">
                     {sites.map((site, index) => (
-                        <a key={index} href={site.link} className="site-card" style={{ background: backgroundColor }}>
+                        <NavLink key={index} to={site.link} className="site-card" style={{ background: backgroundColor }}>
                             <div className="card-content">
                                 <div className="card-icon" style={{ backgroundColor: isDark ? '#828282' : '#a0a0a0' }}>{site.icon}</div>
                                 <h3 style={{ color: textColor }}>{site.title}</h3>
                                 <p style={{ color: textColor }}>{site.description}</p>
                             </div>
-                        </a>
+                        </NavLink>
                     ))}
                 </section>
             </div>
@@ -63,13 +64,13 @@ export default function SiteSection({ isDark }) {
                 <h2>🏫 校园经历</h2>
                 <section className="site-section">
                     {campus.map((site, index) => (
-                        <a key={index} href={site.link} className="site-card2" style={{ background: backgroundColor }}>
+                        <div key={index} className="site-card2" style={{ background: backgroundColor }}>
                             <div className="card-content">
                                 <div className="card-icon" style={{ backgroundColor: isDark ? '#828282' : '#a0a0a0' }}>{site.icon}</div>
                                 <h3 style={{ color: textColor }}>{site.title}</h3>
                                 <p style={{ color: textColor }}>{site.description}</p>
                             </div>
-                        </a>
+                        </div>
                     ))}
                 </section>
             </div>

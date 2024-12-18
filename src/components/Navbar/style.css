@@ -123,3 +123,18 @@
 .search-button:hover {
     background-color: #5a8fdc;
 }
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-left {
+        margin-bottom: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.9rem;
+    }
+}
