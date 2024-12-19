@@ -28,3 +28,9 @@
     color: #213547;
     /* 浅色主题下的颜色 */
 }
+
+@media (max-width: 768px) {
+    .item-card {
+        flex: 1 1 100%;
+    }
+}

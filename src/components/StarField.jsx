@@ -4,15 +4,26 @@ const StarField = ({ isDark }) => {
     const canvasRef = useRef(null);
     const stars = [];
 
+    const getRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
     const createStars = (num) => {
         stars.length = 0;
         for (let i = 0; i < num; i++) {
             stars.push({
                 x: Math.random() * window.innerWidth,
-                y: 0,
-                radius: Math.random() * 2 + 1,
+                y: Math.random() * window.innerHeight,
+                radius: Math.random() * 1 + 0.5,
                 alpha: Math.random(),
-                speed: Math.random() * (isDark ? 0.5 : 0.2) + 0.1, // 浅色主题下速度更慢
+                speed: Math.random() * (isDark ? 2 : 1) + 1,
+                color: getRandomColor(),
+                isMeteor: Math.random() < 0.1
             });
         }
     };
@@ -22,20 +33,23 @@ const StarField = ({ isDark }) => {
         stars.forEach(star => {
             ctx.beginPath();
             ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-            ctx.fillStyle = isDark ? `rgba(255, 255, 255, ${star.alpha})` : `rgba(255, 215, 0, ${star.alpha})`; // 浅色主题下使用金色
+            ctx.fillStyle = star.color;
             ctx.fill();
 
-            if (isDark) {
-                star.x -= star.speed;
-                star.y += star.speed;
-            } else {
-                star.x += star.speed;
-                star.y += star.speed;
+            if (star.isMeteor) {
+                ctx.strokeStyle = star.color;
+                ctx.lineWidth = star.radius;
+                ctx.moveTo(star.x, star.y);
+                ctx.lineTo(star.x - 15, star.y + 5);
+                ctx.stroke();
             }
 
+            star.x += star.isMeteor ? star.speed * 2 : star.speed;
+            star.y += star.speed;
+
             if (star.y > window.innerHeight || star.x > window.innerWidth) {
-                star.y = 0;
-                star.x = Math.random() * window.innerWidth;
+                star.y = Math.random() * window.innerHeight;
+                star.x = 0;
             }
         });
     };

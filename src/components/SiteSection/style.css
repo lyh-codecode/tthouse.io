@@ -8,6 +8,7 @@
 
 .site h2 {
     font-size: 1.8rem;
+    margin-top: 50px;
     margin-bottom: 1rem;
 }
 
@@ -17,6 +18,7 @@
     transition: transform 0.3s;
     flex: 1 1 26%;
     max-width: 26%;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .site-card2 {

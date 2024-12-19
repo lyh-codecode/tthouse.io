@@ -27,3 +27,18 @@
 .about-me-left {
     flex: 1;
 }
+
+@media (max-width: 768px) {
+    .about-me {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .about-me-left {
+        width: 100%;
+    }
+
+    .personal-info {
+        width: 100%;
+    }
+}

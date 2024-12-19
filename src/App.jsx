@@ -1,14 +1,16 @@
 import './App.css'
+import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
 import SiteSection from './components/SiteSection/index'
 import Navbar from './components/Navbar'
-import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import Studio from './views/Studio'
 import KnowledgeBase from './views/KnowledgeBase'
 import PracticeProjects from './views/PracticeProjects'
-import Studio from './views/Studio'
-import { useState, useEffect } from 'react'
 import Planning from './views/Planning'
 import AboutMe from './views/about/AboutMe'; // 导入 AboutMe 组件
+import PageLayout from './components/page-Layout'
+
 
 function App() {
   const [isDark, setIsDark] = useState(() => {

@@ -4,27 +4,25 @@
   font-weight: 400;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #0d1117;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
   /* 深色主题变量 */
-  --bg-color: #0d1117;
+  --bg-color: linear-gradient(to bottom, rgba(3, 13, 27, 0.8), rgba(29, 25, 25, 0.186));
+  /* 透明渐变 */
   --text-color: rgba(255, 255, 255, 0.87);
   --border-color: rgba(255, 255, 255, 0.1);
   --hover-bg: rgba(255, 255, 255, 0.1);
 }
 
 .light-theme {
-  --bg-color: #f2f2f2;
-  /* 浅色主题背景 */
+  --bg-color: linear-gradient(to right bottom, rgba(255, 255, 255), rgb(203, 225, 255));
+  /* 浅色主题透明渐变 */
   --text-color: #213547;
-  /* 浅色主题文本颜色 */
   --border-color: rgba(0, 0, 0, 0.1);
   --hover-bg: rgba(0, 0, 0, 0.05);
-  /* background-color: linear-gradient(135deg, #ffffff, #7ba6ec);*/
 }
 
 #root {
@@ -37,13 +35,13 @@ a {
   text-decoration: inherit;
 }
 
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
+  /* 使用渐变背景 */
   color: var(--text-color);
 }
 

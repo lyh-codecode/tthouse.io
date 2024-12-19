@@ -30,13 +30,12 @@ export default function Navbar({ isDark, setIsDark }) {
 
                 <div className="nav-right">
                     <NavLink to="/" className="nav-link" activeClassName="active">首页</NavLink>
-
                     <NavLink to="/about" className="nav-link" activeClassName="active">关于我</NavLink>
+                    <NavLink to="https://github.com/lyh-codecode" className="nav-link" activeClassName="active">我的Github</NavLink>
+                    <NavLink to="https://juejin.cn/user/3894900086810922" className="nav-link" activeClassName="active">我的掘金</NavLink>
                     <button className="theme-toggle" onClick={toggleTheme} title="切换主题">
                         {isDark ? <SunIcon /> : <MoonIcon />}
                     </button>
-                    <NavLink to="https://github.com/lyh-codecode" className="nav-link" activeClassName="active">我的Github</NavLink>
-                    <NavLink to="https://juejin.cn/user/3894900086810922" className="nav-link" activeClassName="active">我的掘金</NavLink>
                 </div>
             </div>
         </nav>

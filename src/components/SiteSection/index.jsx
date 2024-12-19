@@ -41,7 +41,11 @@ export default function SiteSection({ isDark }) {
             icon: '🏆'
         }
     ]
-    const backgroundColor = isDark ? 'linear-gradient(to bottom right, #dfdfdf, #17171b)' : 'linear-gradient(to bottom right, #000000, #b9b9b9)';
+    const backgroundColor = isDark
+        ? 'rgba(255, 255, 255, 0.1)'
+        : 'rgba(0, 0, 0, 0.5)';
+
+
     const textColor = isDark ? 'linear-gradient(to right, #ffffff, #4f49fc)' : 'linear-gradient(to right, #ffffff, #4f49fc)';
     return (
         <>

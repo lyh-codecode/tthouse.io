@@ -1,31 +1,37 @@
-import React from 'react';
-import StarField from '../../components/StarField';
+import React, { useState } from 'react';
 import './style.css';
+import PageLayout from '../../components/page-Layout';
 
 const KnowledgeBase = ({ isDark }) => {
     const items = [
-        { title: '项目1', description: '这是项目1的描述' },
-        { title: '项目2', description: '这是项目2的描述' },
-        { title: '项目3', description: '这是项目3的描述' },
-        { title: '项目4', description: '这是项目4的描述' },
+        { title: '项目1', description: '这是项目1的详细描述。' },
+        { title: '项目2', description: '这是项目2的详细描述。' },
+        { title: '项目3', description: '这是项目3的详细描述。' },
+        { title: '项目4', description: '这是项目4的详细描述。' },
         // 添加更多项目...
     ];
 
+    const [selectedItem, setSelectedItem] = useState(items[0]); // 默认选择第一个项目
+
     return (
-        <div style={{ position: 'relative', overflow: 'hidden' }}>
-            <StarField isDark={isDark} />
-            <div style={{ position: 'relative', zIndex: 1 }} className={isDark ? 'dark-theme' : 'light-theme'}>
-                <h1>我的知识库</h1>
-                <div className="item-grid">
-                    {items.map((item, index) => (
-                        <div className="item-card" key={index}>
-                            <h3>{item.title}</h3>
-                            <p>{item.description}</p>
-                        </div>
-                    ))}
-                </div>
+        <PageLayout>
+            <div className="layout-content">
+                <aside className="sidebar">
+                    <h2>项目列表</h2>
+                    <ul>
+                        {items.map((item, index) => (
+                            <li key={index} onClick={() => setSelectedItem(item)} style={{ cursor: 'pointer' }}>
+                                {item.title}
+                            </li>
+                        ))}
+                    </ul>
+                </aside>
+                <main className="main-content">
+                    <h1>{selectedItem.title}</h1>
+                    <p>{selectedItem.description}</p>
+                </main>
             </div>
-        </div>
+        </PageLayout>
     );
 };
 
