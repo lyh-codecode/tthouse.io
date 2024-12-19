@@ -9,7 +9,7 @@ import KnowledgeBase from './views/KnowledgeBase'
 import PracticeProjects from './views/PracticeProjects'
 import Planning from './views/Planning'
 import AboutMe from './views/about/AboutMe'; // 导入 AboutMe 组件
-import PageLayout from './components/page-Layout'
+import PageLayout from './components/knowledge-Layout'
 
 
 function App() {

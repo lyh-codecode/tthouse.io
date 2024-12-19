@@ -1,37 +1,81 @@
 import React, { useState } from 'react';
 import './style.css';
-import PageLayout from '../../components/page-Layout';
+import PageLayout from '../../components/knowledge-Layout';
 
 const KnowledgeBase = ({ isDark }) => {
+
+
     const items = [
-        { title: '项目1', description: '这是项目1的详细描述。' },
-        { title: '项目2', description: '这是项目2的详细描述。' },
-        { title: '项目3', description: '这是项目3的详细描述。' },
-        { title: '项目4', description: '这是项目4的详细描述。' },
-        // 添加更多项目...
+        {
+            title: 'React',
+            description: '这里是',
+            children: [
+                { image: 'react-image-url', link: 'https://reactjs.org' },
+                { image: 'react-image-url', link: 'https://reactjs.org' },
+                { image: 'react-image-url', link: 'https://reactjs.org' },
+                { image: 'react-image-url', link: 'https://reactjs.org' },
+
+            ]
+        },
+        {
+            title: 'Nodejs',
+            description: '这',
+            children: [
+                { image: 'nodejs-image-url', link: 'https://nodejs.org' }
+            ]
+        },
+        {
+            title: 'Vue',
+            description: '这是项',
+            children: [
+                { image: 'vue-image-url', link: 'https://vuejs.org' }
+            ]
+        },
+        {
+            title: '计算机',
+            description: '这。',
+            children: [
+                { image: 'computer-image-url', link: 'https://computer.org' }
+            ]
+        },
     ];
 
-    const [selectedItem, setSelectedItem] = useState(items[0]); // 默认选择第一个项目
+    const [selectedItem, setSelectedItem] = useState(items[0]);
+
+    const sidebarContent = (
+        <div>
+            <ul>
+                {items.map((item, index) => (
+                    <li key={index} onClick={() => setSelectedItem(item)} className='list-item'>
+                        {item.title}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+
+    const mainContent = (
+        <div>
+            <h1>{selectedItem.title}</h1>
+            <div className="item-grid">
+                {selectedItem.children.map((child, index) => (
+                    <div key={index} className="item-card">
+                        <img src={child.image} alt={child.title} />
+                        <h3>{child.title}</h3>
+                        <p>{child.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 
     return (
-        <PageLayout>
-            <div className="layout-content">
-                <aside className="sidebar">
-                    <h2>项目列表</h2>
-                    <ul>
-                        {items.map((item, index) => (
-                            <li key={index} onClick={() => setSelectedItem(item)} style={{ cursor: 'pointer' }}>
-                                {item.title}
-                            </li>
-                        ))}
-                    </ul>
-                </aside>
-                <main className="main-content">
-                    <h1>{selectedItem.title}</h1>
-                    <p>{selectedItem.description}</p>
-                </main>
-            </div>
-        </PageLayout>
+        <PageLayout
+            headerContent="知识库"
+            sidebarContent={sidebarContent}
+            mainContent={mainContent}
+            footerContent="页面文章跳转到其他部分"
+        />
     );
 };
 
