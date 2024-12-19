@@ -32,8 +32,22 @@ const KnowledgeBase = ({ isDark }) => {
             ]
         },
         {
-            title: '计算机',
+            title: '数据结构',
             description: '这。',
+            children: [
+                { image: 'computer-image-url', link: 'https://computer.org' }
+            ]
+        },
+        {
+            title: '计网',
+            description: '这是项',
+            children: [
+                { image: 'computer-image-url', link: 'https://computer.org' }
+            ]
+        },
+        {
+            title: '操作系统',
+            description: '这是项',
             children: [
                 { image: 'computer-image-url', link: 'https://computer.org' }
             ]
@@ -55,17 +69,14 @@ const KnowledgeBase = ({ isDark }) => {
     );
 
     const mainContent = (
-        <div>
-            <h1>{selectedItem.title}</h1>
-            <div className="item-grid">
-                {selectedItem.children.map((child, index) => (
-                    <div key={index} className="item-card">
-                        <img src={child.image} alt={child.title} />
-                        <h3>{child.title}</h3>
-                        <p>{child.description}</p>
-                    </div>
-                ))}
-            </div>
+        <div className="item-grid">
+            {selectedItem.children.map((child, index) => (
+                <div key={index} className="item-card">
+                    <img src={child.image} alt={child.title} />
+                    <h3>{child.title}</h3>
+                    <p>{child.description}</p>
+                </div>
+            ))}
         </div>
     );
 

@@ -8,8 +8,8 @@
 
 .site h2 {
     font-size: 1.8rem;
-    margin-top: 50px;
     margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 
 .site-card {
@@ -55,7 +55,14 @@
 
 @media (max-width: 768px) {
     .site-card {
-        flex: 1 1 100%;
-        max-width: 100%;
+        flex: 1 1 80%;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .site-card2 {
+        flex: 1 1 80%;
+        max-width: 80%;
+        margin: 0 auto;
     }
 }

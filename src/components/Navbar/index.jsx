@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import './style.css';
 import { MoonIcon, SunIcon } from './ThemeIcons';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar({ isDark, setIsDark }) {
-    const [showMySiteOptions, setShowMySiteOptions] = useState(false);
 
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
@@ -23,9 +22,9 @@ export default function Navbar({ isDark, setIsDark }) {
         <nav className="navbar">
             <div className="nav-content">
                 <div className="nav-left">
-                    <a href="/" className="nav-logo">
-                        Hello 我是小梁
-                    </a>
+                    <NavLink to="/index" className="nav-logo">
+                        Hello 这是小梁
+                    </NavLink>
                 </div>
 
                 <div className="nav-right">

@@ -27,6 +27,6 @@ body {
 @media (max-width: 768px) {
   .container {
     width: 100%;
-    padding-top: 5vh;
+    padding-top: 12vh;
   }
 }

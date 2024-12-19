@@ -34,7 +34,7 @@ function App() {
             <Route path="/studio" element={<Studio />} />
             <Route path="/planning" element={<Planning />} />
             <Route path="/index" element={<SiteSection isDark={isDark} />} />
-            <Route path="/about" element={<AboutMe />} />
+            <Route path="/about" element={<AboutMe isDark={isDark} />} />
             <Route path='/' element={<Navigate to="/index" />} />
             <Route path="*" element={<Navigate to="/index" />} />
           </Routes>

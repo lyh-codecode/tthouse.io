@@ -3,13 +3,12 @@ import './style.css';
 import PageLayout from '../../components/knowledge-Layout';
 import MarkdownViewer from '../../components/MarkdownViewer';
 
-
 const PracticeProjects = () => {
     const items = [
-        { title: '彷网易云', description: '这是目标2的详细描述。', filePath: '../../assets/wyy.md' },
+        { title: '复现网易云音乐', description: '这是目标2的详细描述。', filePath: '/src/assets/wyy.md' },
         { title: '目标2', description: '这是目标2的详细描述。', filePath: '/src/assets/目标2.md' },
-        { title: '项目C', description: '这是项目C的详细描述。' },
-        { title: '项目D', description: '这是项目D的详细描述。' },
+        { title: '项目C', description: '这是项目C的详细描述。', filePath: '/src/assets/项目C.md' },
+        { title: '项目D', description: '这是项目D的详细描述。', filePath: '/src/assets/项目D.md' },
     ];
 
     const [selectedItem, setSelectedItem] = useState(items[0]); // 默认选择第一个项目
@@ -26,12 +25,7 @@ const PracticeProjects = () => {
         </div>
     );
 
-    const mainContent = (
-        <div>
-            <h1>{selectedItem.title}</h1>
-            <p>{selectedItem.description}</p>
-        </div>
-    );
+    const mainContent = (<MarkdownViewer filePath={selectedItem.filePath} />);
 
     return (
         <PageLayout
