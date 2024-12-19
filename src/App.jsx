@@ -30,7 +30,7 @@ function App() {
         <div className="container" style={{ flex: 1 }}>
           <Routes>
             <Route path="/knowledge-base" element={<KnowledgeBase isDark={isDark} />} />
-            <Route path="/practice-projects" element={<PracticeProjects />} />
+            <Route path="/practice-projects" element={<PracticeProjects isDark={isDark} />} />
             <Route path="/studio" element={<Studio />} />
             <Route path="/planning" element={<Planning />} />
             <Route path="/index" element={<SiteSection isDark={isDark} />} />

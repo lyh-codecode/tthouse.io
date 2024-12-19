@@ -11,8 +11,7 @@ body {
   margin: 0 auto;
   color: var(--text-color);
   gap: 4rem;
-  padding-top: 10vh;
-  background-color: var(--bg-color);
+  padding-top: 9vh;
 }
 
 .left-container {

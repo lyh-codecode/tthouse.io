@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import './style.css';
 import PageLayout from '../../components/knowledge-Layout';
-import MarkdownViewer from '../../components/MarkdownViewer';
+import MarkdownViewer from '../../components/transform-md/MarkdownViewer';
 
-const PracticeProjects = () => {
+const PracticeProjects = ({ isDark }) => {
     const items = [
-        { title: '复现网易云音乐', description: '这是目标2的详细描述。', filePath: '/src/assets/wyy.md' },
-        { title: '目标2', description: '这是目标2的详细描述。', filePath: '/src/assets/目标2.md' },
-        { title: '项目C', description: '这是项目C的详细描述。', filePath: '/src/assets/项目C.md' },
-        { title: '项目D', description: '这是项目D的详细描述。', filePath: '/src/assets/项目D.md' },
+        { title: '复现网易云音乐', description: '这是目标2的详细描述。', filePath: '/src/assets/myproject/wyy.md' }
     ];
 
     const [selectedItem, setSelectedItem] = useState(items[0]); // 默认选择第一个项目
@@ -33,6 +30,7 @@ const PracticeProjects = () => {
             sidebarContent={sidebarContent}
             mainContent={mainContent}
             footerContent="页面文章跳转到其他部分"
+            isDark={isDark}
         />
     );
 };

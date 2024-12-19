@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-
+import './style.css';
 const MarkdownViewer = ({ filePath }) => {
     const [content, setContent] = useState('');
 

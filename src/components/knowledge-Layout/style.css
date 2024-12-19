@@ -4,11 +4,6 @@
     min-height: 100vh;
 }
 
-.header {
-    padding: 1rem;
-    text-align: center;
-}
-
 .layout-content {
     display: flex;
     flex: 1;
@@ -17,21 +12,20 @@
 .sidebar {
     position: fixed;
     left: 0;
-    top: 7rem;
+    top: 5rem;
     height: 100vh;
     max-width: 15%;
     min-width: 15%;
     transition: transform 0.3s ease;
     z-index: 80;
-    background-color: rgba(247, 247, 247, 0.9);
     text-align: center;
     border-right: 2px solid #e0e0e0;
+    background-color: #fff;
 }
 
 .main-content {
     flex: 1;
     padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
     overflow: auto;
 }
 
@@ -53,7 +47,7 @@
 .sidebar-toggle {
     display: block;
     position: fixed;
-    left: 13%;
+    left: 15%;
     top: 50%;
     transform: translateY(-50%);
     background-color: #3880ed;
@@ -76,12 +70,13 @@
     .sidebar {
         position: fixed;
         left: 0;
+        top: 7rem;
         min-height: 100%;
         max-width: 25%;
         min-width: 20%;
         transition: transform 0.3s ease;
         z-index: 80;
-        background-color: rgba(255, 255, 255, 0.95);
+        background-color: #ffffff;
     }
 
     .sidebar-toggle {
