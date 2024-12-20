@@ -5,8 +5,10 @@
     border-radius: 5px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .markdown-viewer {
         margin-left: 0;
+        flex: 1;
+        max-width: 80%;
     }
 }
